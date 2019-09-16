@@ -12,9 +12,6 @@ git_setup () {
  git init
  git config --global user.name "victorbecerragit"
  git config --global user.email vbecerraar@gmail.com
-}
-
-git_build () {
  git add -A
  git add .gitignore
  git commit -m "initial project"
@@ -22,6 +19,8 @@ git_build () {
  ssh -T git@github.com
  echo "Create a new repo on github"
  curl -u 'victorbecerragit' https://api.github.com/user/repos -d '{"name":"docker-versioned"}'
+ git remote add origin https://github.com/victorbecerragit/docker-versioned.git
+ git push -u origin master
 }
 
 #Setup git branch if this doesn't exist 
@@ -32,7 +31,5 @@ else
  echo "Git unconfigured"
  echo "Setup git configuration..."
  git_setup
- echo "git init..."
- git_build
 fi
 
