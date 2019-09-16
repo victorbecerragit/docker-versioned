@@ -3,7 +3,7 @@ set -x
 # docker hub username
 USERNAME=victorbecerra
 # image name
-IMAGE=helloworld
+IMAGE=docker-images
 # ensure we're up to date
 git pull
 # bump version
